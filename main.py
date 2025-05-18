@@ -22,6 +22,7 @@ while running:
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("purple")
 
+    platform.move(screen)
     platform.draw(screen)
 
     # flip() the display to put your work on screen
