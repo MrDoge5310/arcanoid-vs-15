@@ -1,6 +1,7 @@
 # Example file showing a basic pygame "game loop"
 import pygame
 from platform import *
+from ball import *
 
 # pygame setup
 pygame.init()
@@ -11,6 +12,7 @@ running = True
 FPS = 60
 
 platform = Platform(1280/2, 720 - 100)
+ball = Ball((1280/2, 500))
 
 while running:
     # poll for events
@@ -24,6 +26,8 @@ while running:
 
     platform.move(screen)
     platform.draw(screen)
+
+    ball.draw(screen)
 
     # flip() the display to put your work on screen
     pygame.display.flip()
