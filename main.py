@@ -2,6 +2,7 @@
 import pygame
 from platform import *
 from ball import *
+from enemy import *
 
 # pygame setup
 pygame.init()
@@ -10,6 +11,11 @@ clock = pygame.time.Clock()
 running = True
 
 FPS = 60
+
+enemies = list()
+for x in range(45, screen.get_width() - 50, 55):
+    for y in range(50, 151, 50):
+        enemies.append(Enemy(x, y))
 
 platform = Platform(1280/2, 720 - 100)
 ball = Ball((1280/2, 500))
@@ -26,6 +32,12 @@ while running:
 
     platform.move(screen)
     platform.draw(screen)
+
+    for enemy in enemies:
+        enemy.draw(screen)
+        if enemy.check_collision(ball):
+            if enemy.health <= 0:
+                enemies.remove(enemy)
 
     ball.draw(screen)
     ball.move(screen, platform)
