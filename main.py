@@ -28,7 +28,7 @@ while running:
     platform.draw(screen)
 
     ball.draw(screen)
-    ball.move(screen)
+    ball.move(screen, platform)
 
     # flip() the display to put your work on screen
     pygame.display.flip()
