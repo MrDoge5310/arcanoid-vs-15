@@ -17,7 +17,7 @@ font = pygame.font.SysFont(None, 72)
 # Инициализация врагов
 enemies = list()
 for x in range(45, screen.get_width() - 50, 55):
-    for y in range(50, 151, 50):
+    for y in range(50, 201, 50):
         enemies.append(Enemy(x, y))
 
 platform = Platform(1280 / 2, 720 - 100)
